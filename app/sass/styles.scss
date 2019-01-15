@@ -1,0 +1,1641 @@
+$yellow: #f6a113;
+$black: #000;
+$white: #fff;
+$primary_font: "Gentium Basic", serif;
+$secondary_font: "Lato", sans-serif;
+
+//grid
+$xs: 320px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  .nav-wraper {
+    width: 80px;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    background: $yellow;
+    z-index: 9999;
+
+    .logo {
+      width: 80px;
+      height: 70px;
+      display: block;
+      text-decoration: none;
+      outline: none;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        padding: 5px 0;
+        background: $black;
+        fill: $yellow;
+      }
+    }
+
+    .hamburger {
+      position: absolute;
+      width: 80px;
+      height: 65px;
+      cursor: pointer;
+
+      @media screen and (max-width: $xs) and (orientation: portrait) {
+        top: 0;
+        right: 0;
+      }
+
+      @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+        top: 0;
+        right: 0;
+      }
+
+      span {
+        height: 5px;
+        background: black;
+        border-radius: 15px;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+      }
+
+      :nth-child(1) {
+        width: 30px;
+        top: 20px;
+        left: 25px;
+      }
+
+      :nth-child(2) {
+        width: 50px;
+        top: 30px;
+        left: 15px;
+      }
+
+      :nth-child(3) {
+        width: 50px;
+        top: 30px;
+        left: 15px;
+      }
+
+      :nth-child(4) {
+        width: 30px;
+        top: 40px;
+        left: 25px;
+      }
+    }
+
+    .socials {
+      width: 80px;
+      height: 120px;
+      text-align: center;
+      position: fixed;
+      bottom: 45px;
+
+      @media screen and (max-width: $xs) and (orientation: portrait) {
+        display: none;
+      }
+
+      @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+        display: none;
+      }
+
+      a {
+        display: block;
+        width: 80px;
+        text-align: center;
+        font-size: 25px;
+        text-decoration: none;
+        color: $black;
+        transition: 0.2s linear;
+        outline: none;
+
+        &:hover {
+          color: $white;
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .language {
+      cursor: pointer;
+      display: block;
+      color: $black;
+      outline: none;
+      width: 80px;
+      text-align: center;
+      font-size: 20px;
+      padding: 5px 0;
+      font-weight: bold;
+      position: fixed;
+      bottom: 0;
+      transition: 0.2s linear;
+
+      &:hover {
+        color: $white;
+      }
+
+      @media screen and (max-width: $xs) and (orientation: portrait) {
+        height: 40px;
+        top: 10px;
+        right: 60px;
+      }
+
+      @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+        height: 40px;
+        top: 10px;
+        right: 60px;
+      }
+    }
+
+    @media screen and (max-width: $xs) and (orientation: portrait) {
+      width: 100%;
+      height: 70px;
+    }
+
+    @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+      width: 100%;
+      height: 70px;
+    }
+  }
+
+  nav {
+    position: fixed;
+    max-width: 950px;
+    height: 100vh;
+    left: -950px;
+    right: 0;
+    background: $yellow;
+    transition: all 1s ease-in-out;
+    font-size: 30px;
+    z-index: 9998;
+
+    @media screen and (max-width: $xs) and (orientation: portrait) {
+      font-size: 20px;
+    }
+
+    @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+      font-size: 25px;
+    }
+
+    @media screen and (min-width: $sm + 1) and (max-width: $md) and (orientation: portrait) {
+      font-size: 35px;
+    }
+
+    @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: portrait) {
+      font-size: 25px;
+    }
+
+    @media screen and (min-width: $lg + 1) and (orientation: portrait) {
+      font-size: 35px;
+    }
+
+    @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: landscape) {
+      font-size: 25px;
+      overflow-y: scroll;
+    }
+
+    @media screen and (min-width: $sm + 1) and (max-width: $md) and (orientation: landscape) {
+      font-size: 30px;
+      overflow-y: scroll;
+    }
+
+    @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: landscape) {
+      font-size: 25px;
+      overflow-y: scroll;
+    }
+
+    .menu {
+      position: absolute;
+      display: inline-block;
+      width: calc(100% - 450px);
+      height: 100%;
+      padding-top: 50px;
+
+      @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: portrait) {
+        width: calc(100% - 350px);
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      .menu-item {
+        list-style-type: none;
+        font-family: $primary-font;
+        font-size: 1.5em;
+        color: $black;
+        font-style: italic;
+        padding: 0 0 0 20px;
+
+        a {
+          text-decoration: none;
+          transition: all 0.2s ease-in-out;
+          color: $black;
+          position: relative;
+
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            border: 2px $white solid;
+            transform: scaleX(0);
+            transition: all 0.5s ease-in-out;
+          }
+
+          &:hover {
+            color: $white;
+
+            &:after {
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+
+      .download-cv {
+        width: 90%;
+        position: absolute;
+        font-style: italic;
+        font-family: $primary-font;
+        bottom: 20px;
+        padding-left: 20px;
+
+        a {
+          display: block;
+          width: 90%;
+          height: 40px;
+          text-decoration: none;
+          border-bottom: 1px $black solid;
+          font-size: 0.9em;
+          color: black;
+          transition: all 0.3s;
+        }
+
+        i {
+          color: $black;
+          top: 7px;
+          right: 12%;
+          display: block;
+          position: absolute;
+          transition: all 0.2s;
+
+          @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: landscape) {
+            top: 35px;
+          }
+
+          @media screen and (min-width: $sm + 1) and (max-width: $md) and (orientation: landscape) {
+            top: 40px;
+          }
+
+          @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: landscape) {
+            top: 35px;
+          }
+        }
+
+        span {
+          display: block;
+          padding: 5px;
+        }
+
+        &:hover {
+          a {
+            color: $white;
+          }
+
+          i {
+            color: $white;
+            opacity: 0.5;
+          }
+        }
+
+        @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: landscape) {
+          position: relative;
+          padding-left: 20px;
+          padding-top: 30px;
+        }
+
+        @media screen and (min-width: $sm + 1) and (max-width: $md) and (orientation: landscape) {
+          position: relative;
+          padding-left: 20px;
+          padding-top: 30px;
+        }
+
+        @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: landscape) {
+          position: relative;
+          padding-left: 20px;
+          padding-top: 30px;
+        }
+      }
+
+      @media screen and (max-width: $md) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: $xs) and (orientation: portrait) {
+        padding-top: 80px;
+      }
+
+      @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+        padding-top: 80px;
+      }
+    }
+
+    .menu-form {
+      position: absolute;
+      display: inline-block;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      width: 350px;
+      font-family: $secondary-font;
+      right: 50px;
+
+      @media screen and (min-width: $md) and (max-width: $lg) and (orientation: portrait) {
+        width: 300px;
+      }
+
+      .menu-form-title {
+        color: black;
+        font-size: 1.5em;
+        font-family: $primary-font;
+        font-style: italic;
+      }
+
+      .menu-form-field {
+        height: 8px;
+        position: relative;
+        width: 100%;
+        margin: 45px 0 20px;
+        overflow: visible;
+        border-bottom: 1px $black solid;
+        border-left: 1px $black solid;
+
+        input {
+          position: absolute;
+          background: transparent;
+          border: none;
+          color: $black;
+          caret-color: white;
+          font-size: 0.5em;
+          line-height: 21px;
+          left: 2.5%;
+          right: 2.5%;
+          width: 95%;
+          bottom: 0;
+          outline: 0;
+          height: 40px;
+          z-index: 1;
+        }
+
+        label {
+          position: absolute;
+          font-size: 0.5em;
+          bottom: 0;
+          left: 10px;
+          opacity: 0.8;
+          transition: 0.2s;
+        }
+
+        &.focus {
+          label {
+            bottom: 20px;
+            left: 0;
+            font-size: 0.4em;
+          }
+        }
+
+        &.focus-area {
+          label {
+            bottom: 80px;
+            left: 0;
+            font-size: 0.4em;
+          }
+        }
+
+        textarea {
+          position: absolute;
+          background: transparent;
+          border: none;
+          color: black;
+          caret-color: white;
+          font-size: 0.5em;
+          line-height: 21px;
+          left: 2.5%;
+          right: 2.5%;
+          width: 95%;
+          bottom: 0;
+          outline: 0;
+          resize: none;
+          z-index: 1;
+        }
+      }
+
+      .send {
+        position: absolute;
+        width: 40%;
+        height: 40px;
+        padding: 5px;
+        background: transparent;
+        border: 1px $black solid;
+        font-family: $secondary-font;
+        font-size: 0.6em;
+        font-weight: 600;
+        color: black;
+        right: 0;
+        outline: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background: $black;
+          color: $white;
+        }
+      }
+
+      @media screen and (max-width: $md) {
+        display: none;
+      }
+    }
+  }
+
+  .menu-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.75s ease-in-out;
+    z-index: 9997;
+  }
+
+  &.open {
+    nav {
+      left: 80px;
+
+      @media screen and (max-width: $xs) and (orientation: portrait) {
+        left: 0;
+      }
+
+      @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+        left: 0;
+      }
+    }
+
+    .hamburger {
+      :nth-child(1) {
+        transform: translateY(10px);
+        opacity: 0;
+      }
+
+      :nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      :nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      :nth-child(4) {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+    }
+
+    .menu-back {
+      position: fixed;
+      top: 0;
+      left: 0;
+      transition: 0.75s ease-in-out;
+      width: 100%;
+      height: 100vh;
+      background: $black;
+      opacity: 0.3;
+    }
+  }
+}
+
+main {
+  width: 100%;
+  padding-left: 80px;
+
+  section {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    font-family: $secondary_font;
+    font-size: 24px;
+  }
+
+  .section-header {
+    height: 100vh;
+    background: url("../assets/img/bg_header.jpg") no-repeat center center;
+    background-size: cover;
+
+    .title-container {
+      position: absolute;
+      width: 100%;
+      bottom: 100px;
+      padding: 50px 0 50px 50px;
+
+      @media screen and (max-width: $xs) and (orientation: portrait) {
+        bottom: 70px;
+      }
+
+      @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+        bottom: 70px;
+      }
+
+      @media screen and (min-width: $sm + 1) and (max-width: $md) and (orientation: portrait) {
+        bottom: 70px;
+      }
+
+      @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: portrait) {
+        bottom: 70px;
+      }
+
+      @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: landscape) {
+        bottom: 70px;
+      }
+
+      @media screen and (min-width: $sm + 1) and (max-width: $md) and (orientation: landscape) {
+        bottom: 70px;
+      }
+
+      @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: landscape) {
+        bottom: 70px;
+      }
+
+      .title {
+        width: 100%;
+        font-size: 3em;
+        font-weight: 900;
+        color: $white;
+
+        @media screen and (max-width: $xs) and (orientation: portrait) {
+          font-size: 1.1em;
+        }
+
+        @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+          font-size: 1.2em;
+        }
+
+        @media screen and (min-width: $sm + 1) and (max-width: $md) and (orientation: portrait) {
+          font-size: 1.9em;
+        }
+
+        @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: portrait) {
+          font-size: 2.7em;
+        }
+
+        @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: landscape) {
+          font-size: 1.5em;
+        }
+
+        @media screen and (min-width: $sm + 1) and (max-width: $md) and (orientation: landscape) {
+          font-size: 1.8em;
+        }
+
+        @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: landscape) {
+          font-size: 2.3em;
+        }
+      }
+
+      .line {
+        width: 35%;
+        border: 2px $yellow solid;
+      }
+
+      .subtitle {
+        color: $white;
+        font-size: 1em;
+        font-weight: 200;
+
+        @media screen and (max-width: $xs) and (orientation: portrait) {
+          font-size: 0.7em;
+        }
+
+        @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+          font-size: 0.8em;
+        }
+
+        @media screen and (min-width: $sm + 1) and (max-width: $md) and (orientation: portrait) {
+          font-size: 1em;
+        }
+
+        @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: portrait) {
+          font-size: 1.3em;
+        }
+
+        @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: landscape) {
+          font-size: 0.9em;
+        }
+
+        @media screen and (min-width: $sm + 1) and (max-width: $md) and (orientation: landscape) {
+          font-size: 1em;
+        }
+
+        @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: landscape) {
+          font-size: 1.3em;
+        }
+      }
+    }
+
+    .bg-overlay {
+      position: absolute;
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0) 36%,
+        rgba(0, 0, 0, 1) 96%
+      );
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+    }
+
+    .more {
+      position: absolute;
+      font-size: 0.9em;
+      font-weight: 200;
+      color: $white;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -50px;
+        width: 1px;
+        background: $yellow;
+        height: 40px;
+        animation: discover-more 4s ease-in-out infinite;
+      }
+
+      @keyframes discover-more {
+        0% {
+          top: -50px;
+          transform: scaleY(1);
+        }
+
+        7% {
+          top: 30px;
+          transform: scaleY(0.5);
+        }
+
+        14% {
+          top: 0;
+          transform: scaleY(0.5);
+        }
+
+        21% {
+          top: 30px;
+          transform: scaleY(0.5);
+        }
+
+        35% {
+          top: -50px;
+          transform: scaleY(1);
+        }
+
+        100% {
+          top: -50px;
+          transform: scaleY(1);
+        }
+      }
+
+      @media screen and (max-width: $xs) and (orientation: portrait) {
+        font-size: 0.7em;
+      }
+
+      @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+        font-size: 0.7em;
+      }
+
+      @media screen and (min-width: $sm + 1) and (max-width: $md) and (orientation: portrait) {
+        font-size: 0.8em;
+      }
+
+      @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: portrait) {
+        font-size: 0.8em;
+      }
+
+      @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: landscape) {
+        font-size: 0.7em;
+      }
+
+      @media screen and (min-width: $sm + 1) and (max-width: $md) and (orientation: landscape) {
+        font-size: 0.8em;
+      }
+
+      @media screen and (min-width: $md + 1) and (max-width: $lg) and (orientation: landscape) {
+        font-size: 0.8em;
+      }
+    }
+
+    @media screen and (max-width: $xs) and (orientation: portrait) {
+      height: calc(100vh - 70px);
+    }
+
+    @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+      height: calc(100vh - 70px);
+    }
+  }
+
+  .section-about-me {
+    .about-me {
+      padding: 50px 50px 100px;
+
+      .title {
+        font-size: 1.5em;
+        font-weight: 900;
+      }
+
+      .description {
+        padding: 40px 0;
+        font-size: 0.7em;
+      }
+
+      .signature {
+        padding: 30px 0;
+        position: absolute;
+        width: 320px;
+        left: calc(100% - 320px);
+        bottom: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .about-me-photo {
+      display: flex;
+      align-items: center;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .section-my-skills {
+    background: url("../assets/img/bg-skills.jpg") fixed no-repeat center center;
+    background-size: cover;
+    text-align: center;
+
+    .bg-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: $yellow;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    .content-overlay {
+      z-index: 1;
+      position: relative;
+      padding: 20px 20px 150px;
+      .title {
+        color: $black;
+        font-weight: 900;
+        font-size: 2em;
+
+        span {
+          color: $white;
+        }
+      }
+
+      .subtitle {
+        color: $white;
+      }
+
+      .line {
+        position: absolute;
+        width: 60%;
+        height: 1px;
+        left: 20%;
+        background: $black;
+      }
+
+      .chart {
+        position: relative;
+        .bars {
+          display: flex;
+          align-items: flex-end;
+          padding: 50px 0;
+          height: 500px;
+
+          @media screen and (max-width: $md - 1) {
+            flex-direction: column;
+            align-items: flex-start;
+            border-left: 1px $black solid;
+          }
+
+          .bar {
+            cursor: pointer;
+            width: 16.66%;
+            margin: 0 15px;
+            background: $white;
+            position: relative;
+
+            @media screen and (max-width: $md - 1) {
+              margin: 15px 0;
+            }
+
+            span {
+              height: 24px;
+              line-height: 1;
+              position: absolute;
+              display: block;
+              bottom: 0;
+              left: 50%;
+              transform: rotate(-90deg) translateY(-50%);
+              transform-origin: top left 0;
+              white-space: nowrap;
+              color: $yellow;
+
+              @media screen and (max-width: $md - 1) {
+                transform: rotate(0) translateY(50%);
+                left: 0;
+                text-align: left;
+                padding-left: 50px;
+                bottom: 50%;
+              }
+
+              @media screen and (max-width: $xs + 50) {
+                font-size: 0.8em;
+                padding-left: 20px;
+              }
+            }
+          }
+
+          :nth-child(1) {
+            height: 100%;
+
+            @media screen and (max-width: $md - 1) {
+              height: 16.6%;
+              width: 100%;
+            }
+          }
+          :nth-child(2) {
+            height: 80%;
+
+            @media screen and (max-width: $md - 1) {
+              height: 16.6%;
+              width: 80%;
+            }
+          }
+          :nth-child(3) {
+            height: 70%;
+
+            @media screen and (max-width: $md - 1) {
+              height: 16.6%;
+              width: 70%;
+            }
+          }
+          :nth-child(4) {
+            height: 80%;
+
+            @media screen and (max-width: $md - 1) {
+              height: 16.6%;
+              width: 70%;
+            }
+          }
+          :nth-child(5) {
+            height: 50%;
+
+            @media screen and (max-width: $md - 1) {
+              height: 16.6%;
+              width: 50%;
+            }
+          }
+          :nth-child(6) {
+            height: 70%;
+
+            @media screen and (max-width: $md - 1) {
+              height: 16.6%;
+              width: 70%;
+            }
+          }
+        }
+
+        .bar-descriptions {
+          width: 100%;
+          height: auto;
+          position: relative;
+          .bar-description {
+            font-size: 0.7em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 40px;
+            color: $white;
+            visibility: hidden;
+            animation: popoverUnactive 0.5s ease-in-out forwards;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: -40px;
+              border-bottom: 40px solid rgba(0, 0, 0, 0.5);
+              border-right: 20px solid transparent;
+              border-left: 20px solid transparent;
+            }
+
+            &.active {
+              animation: popoverActive 0.5s ease-in-out forwards 0.4s;
+            }
+          }
+
+          .bar-description-1 {
+            &::before {
+              left: calc(8.33% - 15px);
+            }
+          }
+
+          .bar-description-2 {
+            &::before {
+              left: calc(24.99% - 15px);
+            }
+          }
+
+          .bar-description-3 {
+            &::before {
+              left: calc(41.33% - 15px);
+            }
+          }
+
+          .bar-description-4 {
+            &::before {
+              left: calc(57.66% - 15px);
+            }
+          }
+
+          .bar-description-5 {
+            &::before {
+              left: calc(74.99% - 15px);
+            }
+          }
+
+          .bar-description-6 {
+            &::before {
+              left: calc(90.11% - 15px);
+            }
+          }
+
+          @media screen and (max-width: $md - 1) {
+            display: none;
+          }
+        }
+
+        @keyframes popoverUnactive {
+          0% {
+            visibility: visible;
+            transform: scale(1);
+          }
+          100% {
+            display: hidden;
+            transform: scale(0);
+          }
+        }
+
+        @keyframes popoverActive {
+          0% {
+            visibility: visible;
+            transform: scale(0);
+          }
+          100% {
+            visibility: visible;
+            transform: scale(1);
+          }
+        }
+      }
+
+      @media screen and (max-width: $md - 1) {
+        padding: 20px 20px 50px;
+      }
+    }
+  }
+
+  .section-projects {
+    background: url("../assets/img/bg-projects.jpg") repeat-y center center;
+
+    .project {
+      width: 100%;
+      padding: 50px;
+
+      .project-description {
+        .title {
+          font-size: 1.5em;
+          font-weight: 900;
+        }
+
+        .subtitle {
+          padding: 0 20px 20px 0;
+          font-size: 0.8em;
+          font-weight: 700;
+          color: $yellow;
+        }
+
+        .description {
+          font-size: 0.65em;
+        }
+
+        a {
+          display: block;
+          text-align: center;
+          margin-top: 30px;
+          background: $white;
+          border: 3px $yellow solid;
+          font-size: 0.5em;
+          width: 150px;
+          padding: 5px 0;
+          transition: all 0.3s;
+          outline: none;
+          text-decoration: none;
+          color: $black;
+
+          &:hover {
+            background: $yellow;
+          }
+        }
+      }
+
+      .project-mockup {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .section-separator {
+    height: 250px;
+    background: url("../assets/img/bg-separator.jpg") no-repeat center center
+      fixed;
+    background-size: cover;
+
+    .bg-overlay {
+      width: 100%;
+      height: 100%;
+      background: $black;
+      opacity: 0.6;
+      position: absolute;
+    }
+  }
+
+  .section-work {
+    padding: 70px 0 150px;
+    text-align: center;
+    background: $yellow;
+    color: $black;
+
+    .title {
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 2em;
+    }
+
+    a {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      color: $black;
+      padding: 10px 0;
+      bottom: 50px;
+      width: 300px;
+      background: $white;
+      font-weight: 300;
+      text-decoration: none;
+      transition: all 0.3s;
+
+      &:hover {
+        font-weight: 900;
+      }
+    }
+  }
+
+  //Project page
+  $project-width: 370px;
+  $project-count: 4;
+  $project-visible: 3;
+
+  .section-projects-carousel {
+    height: 100vh;
+
+    @media screen and (max-width: $sm) and (orientation: portrait) {
+      height: calc(100vh - 70px);
+    }
+
+    @media screen and (max-width: $lg) and (orientation: landscape) {
+      height: 200vh;
+    }
+
+    .carousel-container {
+      height: 100vh;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+
+      @media screen and (max-width: $sm) and (orientation: portrait) {
+        height: calc(100vh - 70px);
+      }
+
+      @media screen and (max-width: $lg) and (orientation: landscape) {
+        height: 200vh;
+      }
+
+      .projects-container {
+        overflow: hidden;
+        width: $project-width * $project-visible + 50 * $project-visible;
+
+        @media screen and (min-width: 1401px) and (max-width: 1600px) {
+          width: ($project-width - 50) * $project-visible + 50 *
+            $project-visible;
+        }
+
+        @media screen and (min-width: $xl + 1) and (max-width: 1400px) {
+          width: ($project-width - 100) * $project-visible + 50 *
+            $project-visible;
+        }
+
+        @media screen and (min-width: $lg + 1) and (max-width: $xl) {
+          width: ($project-width - 50) * ($project-visible - 1) + 50 *
+            ($project-visible - 1);
+        }
+
+        @media screen and (min-width: $md + 1) and (max-width: $lg) {
+          width: ($project-width) * ($project-visible - 2) + 50 *
+            ($project-visible - 2);
+        }
+
+        @media screen and (min-width: $sm + 1) and (max-width: $md) {
+          width: ($project-width - 50) * ($project-visible - 2) + 50 *
+            ($project-visible - 2);
+        }
+
+        @media screen and (min-width: $xs + 1) and (max-width: $sm) {
+          width: ($project-width - 140) * ($project-visible - 2) + 50 *
+            ($project-visible - 2);
+        }
+
+        @media screen and (max-width: $xs) {
+          width: ($project-width - 140) * ($project-visible - 2) + 50 *
+            ($project-visible - 2);
+        }
+
+        .projects {
+          display: flex;
+          width: $project-width * $project-count + 50 * $project-count;
+          transition: all 1s;
+
+          @media screen and (min-width: 1401px) and (max-width: 1600px) {
+            width: ($project-width - 50) * $project-count + 50 * $project-count;
+          }
+
+          @media screen and (min-width: $xl + 1) and (max-width: 1400px) {
+            width: ($project-width - 100) * $project-count + 50 * $project-count;
+          }
+          //
+          @media screen and (min-width: $lg + 1) and (max-width: $xl) {
+            width: ($project-width - 50) * $project-count + 50 * $project-count;
+          }
+
+          @media screen and (min-width: $md + 1) and (max-width: $lg) {
+            width: ($project-width) * $project-count + 50 * $project-count;
+          }
+
+          @media screen and (min-width: $sm + 1) and (max-width: $md) {
+            width: ($project-width - 50) * $project-count + 50 * $project-count;
+          }
+
+          @media screen and (min-width: $xs + 1) and (max-width: $sm) {
+            width: ($project-width - 140) * $project-count + 50 * $project-count;
+          }
+
+          @media screen and (max-width: $xs) {
+            width: ($project-width - 140) * $project-count + 50 * $project-count;
+          }
+
+          .project {
+            cursor: pointer;
+            position: relative;
+            background: red;
+            width: $project-width;
+            margin: 0 25px;
+            transition: all 1s;
+            box-shadow: 5px 5px 31px 0px rgba(0, 0, 0, 0.4);
+
+            @media screen and (min-width: 1401px) and (max-width: 1600px) {
+              width: $project-width - 50;
+            }
+
+            @media screen and (min-width: $xl + 1) and (max-width: 1400px) {
+              width: $project-width - 100;
+            }
+            //
+            @media screen and (min-width: $lg + 1) and (max-width: $xl) {
+              width: $project-width - 50;
+            }
+
+            @media screen and (min-width: $md + 1) and (max-width: $lg) {
+              width: $project-width;
+            }
+
+            @media screen and (min-width: $sm + 1) and (max-width: $md) {
+              width: $project-width - 50;
+            }
+
+            @media screen and (min-width: $xs + 1) and (max-width: $sm) {
+              width: $project-width - 140;
+            }
+
+            @media screen and (max-width: $xs) {
+              width: $project-width - 140;
+            }
+
+            img {
+              width: 100%;
+            }
+
+            .overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: $black;
+              opacity: 0;
+              visibility: hidden;
+              transition: all 0.3s;
+            }
+
+            .content {
+              width: 100%;
+              top: 0;
+              left: 0;
+              position: absolute;
+              padding: 40% 0;
+              opacity: 0;
+              transition: all 0.3s;
+
+              .title {
+                font-family: $secondary_font;
+                font-weight: 300;
+                width: 100%;
+                color: $yellow;
+                text-align: center;
+              }
+
+              .technologies {
+                text-align: center;
+                color: $white;
+                font-size: 0.8em;
+              }
+
+              .buttons {
+                width: 100%;
+                padding: 30px;
+                display: flex;
+                align-content: center;
+                .button {
+                  width: 50%;
+                  padding: 5px;
+                  border: 1px $yellow solid;
+                  border-radius: 8px;
+                  display: block;
+                  color: $white;
+                  margin: 20px 10px;
+                  font-size: 0.5em;
+                  white-space: nowrap;
+                  text-align: center;
+                }
+              }
+            }
+
+            &:hover {
+              .overlay {
+                visibility: visible;
+                opacity: 0.8;
+                outline: 1px $yellow solid;
+                outline-offset: -20px;
+              }
+
+              .content {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+
+      .arrow {
+        padding: 0 20px;
+        cursor: pointer;
+        opacity: 0.4;
+        height: 100px;
+        transition: all 0.3s;
+
+        @media screen and (max-width: $sm) and (orientation: portrait) {
+          padding: 0;
+          height: 45px;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        img {
+          height: 100%;
+        }
+      }
+
+      .arrow-left {
+        visibility: hidden;
+      }
+    }
+  }
+
+  //Curiculum Vitae Page
+  .section-cooming-soon {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: $black;
+
+    .cooming-soon-container {
+      color: $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: $secondary-font;
+
+      i {
+        color: $yellow;
+        font-size: 150px;
+      }
+
+      p {
+        font-size: 50px;
+        font-weight: 900;
+      }
+    }
+  }
+
+  //Contact page
+  .section-form {
+    background: $black;
+    padding-top: 300px;
+
+    .container {
+      text-align: center;
+
+      .logo {
+        top: 50px;
+        left: 50%;
+        margin-left: -75px;
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        fill: $yellow;
+      }
+    }
+
+    .form {
+      width: 80%;
+      margin-left: 10%;
+      padding: 20px;
+
+      @media screen and (max-width: $sm) {
+        width: 95%;
+        margin-left: 2.5%;
+      }
+    }
+
+    .menu-form-field {
+      height: 8px;
+      position: relative;
+      width: 100%;
+      margin: 45px 0 50px;
+      overflow: visible;
+      border-bottom: 1px $yellow solid;
+      border-left: 3px $yellow solid;
+
+      input {
+        position: absolute;
+        background: transparent;
+        border: none;
+        color: $white;
+        caret-color: white;
+        font-size: 0.8em;
+        line-height: 0.8em;
+        left: 2.5%;
+        right: 2.5%;
+        width: 95%;
+        bottom: 0;
+        outline: 0;
+        height: 40px;
+        z-index: 1;
+      }
+
+      label {
+        position: absolute;
+        font-size: 0.6em;
+        bottom: 0;
+        left: 10px;
+        opacity: 0.8;
+        transition: 0.2s;
+        color: $white;
+      }
+
+      &.focus {
+        label {
+          bottom: 30px;
+          left: 0;
+          font-size: 0.4em;
+        }
+      }
+
+      &.focus-area {
+        label {
+          bottom: 80px;
+          left: 0;
+          font-size: 0.4em;
+        }
+      }
+
+      textarea {
+        position: absolute;
+        background: transparent;
+        border: none;
+        color: $white;
+        caret-color: white;
+        font-size: 0.7em;
+        line-height: 21px;
+        left: 2.5%;
+        right: 2.5%;
+        width: 95%;
+        bottom: 0;
+        outline: 0;
+        resize: none;
+        z-index: 1;
+      }
+    }
+
+    .send {
+      width: 40%;
+      height: 40px;
+      padding: 5px;
+      background: transparent;
+      border: 1px $white solid;
+      font-family: $secondary-font;
+      font-size: 0.6em;
+      font-weight: 600;
+      color: $white;
+      right: 0;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background: $white;
+        color: $black;
+      }
+    }
+
+    .mail {
+      font-family: $secondary_font;
+      font-weight: 100;
+      color: $white;
+    }
+  }
+
+  .section-map {
+    .map {
+      height: 500px;
+    }
+  }
+
+  @media screen and (max-width: $xs) and (orientation: portrait) {
+    padding-left: 0;
+    padding-top: 70px;
+  }
+
+  @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+    padding-left: 0;
+    padding-top: 70px;
+  }
+}
+
+footer {
+  width: calc(100% - 80px);
+  margin-left: 80px;
+  font-size: 24px;
+  font-family: $secondary_font;
+  background: lighten($black, 6%);
+  text-align: center;
+  color: $white;
+  padding: 50px;
+  font-weight: 100;
+
+  .logo {
+    margin: 0 0 50px 50%;
+    transform: translateX(-50%);
+    fill: $yellow;
+    width: 150px;
+  }
+
+  .right {
+    font-size: 0.8em;
+  }
+
+  @media screen and (max-width: $xs) and (orientation: portrait) {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  @media screen and (min-width: $xs + 1) and (max-width: $sm) and (orientation: portrait) {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.load{
+  overflow: hidden;
+}
+
+//preloader
+.preloader {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: $black;
+  z-index: 99999;
+
+  .logo {
+    position: relative;
+    left: calc(50% - 35px);
+    top: calc(50% - 55px);
+    width: 70px;
+    height: 70px;
+    fill: $yellow;
+  }
+
+  .loader {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -150px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: $yellow;
+    border-left-color: $yellow;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.isLoaded{
+  top: -100vh;
+  transition: top 1s ease-in-out;
+}
+
