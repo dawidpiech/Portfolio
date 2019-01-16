@@ -72,6 +72,9 @@ gulp.task('browserSync', function () {
     browserSync.init({
         server: {
             baseDir: "./dist",
+            serveStaticOptions: {
+                extensions: ['html']
+            }
         }
     });
 });

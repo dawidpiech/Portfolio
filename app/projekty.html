@@ -8,6 +8,12 @@
 	<meta name="author" content="Dawid Piech">
 	<title>Dawid Piech - Portfolio</title>
 
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+	<link rel="manifest" href="./assets/img/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
 	<link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400i,700,700i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
 	 rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
@@ -35,11 +41,13 @@
 				</ul>
 
 				<div class="download-cv">
-					<a href="./cv.pdf">
+					<a href="./cv.pdf" download="cv.pdf">
 						Pobierz moje CV
 						<i class="fas fa-cloud-download-alt"></i>
 					</a>
-					<span>dawid@piech.it</span>
+					<p class="mail">
+						<a href="mailto:dawid@piech.it">dawid@piech.it</a>
+					</p>
 				</div>
 			</div>
 			<div class="menu-form">
@@ -143,55 +151,67 @@
 				<div class="projects-container">
 					<div class="projects">
 						<div class="project">
-							<div class="project-photo"><img src="./assets/img/projekt.png" alt=""></div>
+							<div class="project-photo"><img src="./assets/img/project_portfolio.jpg" alt=""></div>
 							<div class="overlay"></div>
 							<div class="content">
-								<div class="title">My portfolio</div>
+								<div class="title">Moje portfolio</div>
 								<div class="buttons">
-									<a href="" class="button visit-site">Visit site</a>
-									<a href="" class="button more">Learn more...</a>
+									<a href="https://piech.it/" class="button visit-site" target="_blank">Zobacz na żywo</a>
+									<a href="https://github.com/dawidpiech/Portfolio" class="button more" target="_blank">
+										<i class="fab fa-github"></i>
+										Sprawdź kod
+									</a>
 								</div>
-								<div class="title">Technologies:</div>
-								<div class="technologies">HTML5, CSS</div>
+								<div class="title">Technologie:</div>
+								<div class="technologies">HTML5, SCSS, Vanila.js, Bootstrap, AOS.js</div>
 							</div>
 						</div>
 						<div class="project">
-							<div class="project-photo"><img src="./assets/img/projekt.png" alt=""></div>
+							<div class="project-photo"><img src="./assets/img/project_webpage.jpg" alt=""></div>
 							<div class="overlay"></div>
 							<div class="content">
-								<div class="title">My portfolio</div>
+								<div class="title">WebPage</div>
 								<div class="buttons">
-									<a href="" class="button visit-site">Visit site</a>
-									<a href="" class="button more">Learn more...</a>
+									<a href="https://webpage.piech.it/" class="button visit-site" target="_blank">Zobacz na żywo</a>
+									<a href="https://github.com/dawidpiech/WebPage" class="button more" target="_blank">
+										<i class="fab fa-github"></i>
+										Sprawdź kod
+									</a>
 								</div>
-								<div class="title">Technologies:</div>
-								<div class="technologies">HTML5, CSS</div>
+								<div class="title">Technologie:</div>
+								<div class="technologies">HTML5, SCSS, Vanila.js, Bootstrap, AOS.js</div>
 							</div>
 						</div>
 						<div class="project">
-							<div class="project-photo"><img src="./assets/img/projekt.png" alt=""></div>
+							<div class="project-photo"><img src="./assets/img/project_webcatalog.jpg" alt=""></div>
 							<div class="overlay"></div>
 							<div class="content">
-								<div class="title">My portfolio</div>
+								<div class="title">WebCatalog</div>
 								<div class="buttons">
-									<a href="" class="button visit-site">Visit site</a>
-									<a href="" class="button more">Learn more...</a>
+									<a href="https://webcatalog.piech.it/" class="button visit-site" target="_blank">Zobacz na żywo</a>
+									<a href="https://github.com/dawidpiech/WebCatalog" class="button more" target="_blank">
+										<i class="fab fa-github"></i>
+										Sprawdź kod
+									</a>
 								</div>
-								<div class="title">Technologies:</div>
-								<div class="technologies">HTML5, CSS</div>
+								<div class="title">Technologie:</div>
+								<div class="technologies">HTML5, SCSS, Vanila.js</div>
 							</div>
 						</div>
 						<div class="project">
-							<div class="project-photo"><img src="./assets/img/projekt.png" alt=""></div>
+							<div class="project-photo"><img src="./assets/img/project_giphy.jpg" alt=""></div>
 							<div class="overlay"></div>
 							<div class="content">
-								<div class="title">My portfolio</div>
+								<div class="title">Giphy Searcher</div>
 								<div class="buttons">
-									<a href="" class="button visit-site">Visit site</a>
-									<a href="" class="button more">Learn more...</a>
+									<a href="https://giphy.piech.it/" class="button visit-site" target="_blank">Zobacz na żywo</a>
+									<a href="https://github.com/dawidpiech/GiphySearcher" class="button more" target="_blank">
+										<i class="fab fa-github"></i>
+										Sprawdź kod
+									</a>
 								</div>
-								<div class="title">Technologies:</div>
-								<div class="technologies">HTML5, CSS</div>
+								<div class="title">Technologie:</div>
+								<div class="technologies">HTML5, SCSS, Vanila.js</div>
 							</div>
 						</div>
 					</div>
@@ -256,6 +276,7 @@
 	 crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
 	 crossorigin="anonymous"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script type="text/javascript" src="./js/main.min.js"></script>
 </body>

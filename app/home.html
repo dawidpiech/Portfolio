@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="EN">
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
@@ -8,7 +8,14 @@
 	<meta name="author" content="Dawid Piech">
 	<title>Dawid Piech - Portfolio</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400i,700,700i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+	<link rel="manifest" href="./assets/img/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400i,700,700i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+	 rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
@@ -21,24 +28,26 @@
 
 </head>
 
-<body>
+<body class="load">
 	<header>
 		<div class="menu-back"></div>
 		<nav>
 			<div class="menu">
 				<ul>
-					<li class="menu-item"><a href="./home.html">Home</a></li>
-					<li class="menu-item"><a href="./projects.html">Projects</a></li>
-					<li class="menu-item"><a href="./cv.html">Curiculum Vitae</a></li>
-					<li class="menu-item"><a href="./contact.html">Contact</a></li>
+					<li class="menu-item"><a href="./home">Home</a></li>
+					<li class="menu-item"><a href="./projects">Projects</a></li>
+					<li class="menu-item"><a href="./cv">Curiculum Vitae</a></li>
+					<li class="menu-item"><a href="./contact">Contact</a></li>
 				</ul>
 
 				<div class="download-cv">
-					<a href="#">
+					<a href="./cv.pdf">
 						Download my CV
 						<i class="fas fa-cloud-download-alt"></i>
 					</a>
-					<span>dawid@piech.it</span>
+					<p class="mail">
+						<a href="mailto:dawid@piech.it">dawid@piech.it</a>
+					</p>
 				</div>
 			</div>
 			<div class="menu-form">
@@ -131,15 +140,252 @@
 				</a>
 
 			</div>
-			<a href="./index.html" class="language">PL</a>
+			<a href="./" class="language">PL</a>
 		</div>
 	</header>
 
 	<main>
-		
+		<section class="section-header">
+			<div class="bg-overlay"></div>
+			<div class="title-container">
+				<div class="title">Hi, I'm David</div>
+				<div class="line"></div>
+				<div class="subtitle">beginer frontend developer</div>
+			</div>
+			<div class="more">
+				DISCOVER MORE
+			</div>
+		</section>
+
+		<section class="section-about-me">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-6 about-me" data-aos="fade-right">
+						<div class="title">Who is this guy?</div>
+						<div class="description">
+							David Piech. He creates internet applications. Live in Cracow.
+							He says, he will create one day
+							"Second Microsoft" (I do not believe him 😄). And also, he likes to skate, he likes to code in the evenings. He
+							doesn't like
+							talk about yourself in third person 😂. Currently, I mainly learn frontend technology (but in the future I would
+							like it too
+							expand in the backend (Node.js so specifically 🙂). I like to take care of details (sometimes too much).
+							<br><br>
+							I am looking for a job or internship in Krakow as a junior front-end developer. If you are interested in
+							employment
+							me or cooperate with me, go to the contact section.
+						</div>
+						<div class="signature">
+							<img src="./assets/img/signature.jpg" alt="Signature">
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-12 col-lg-6 about-me-photo" data-aos="fade-left">
+						<img src="./assets/img/me.jpg" alt="Me Photo">
+					</div>
+				</div>
+
+			</div>
+
+		</section>
+
+		<section class="section-my-skills">
+			<div class="bg-overlay"></div>
+			<div class="content-overlay container">
+				<div class="title" data-aos="zoom-out-up"><span>My</span>SKILLS</div>
+				<p class="subtitle" data-aos="zoom-out-up">My skills and technologies with which I'm familiar and
+					I use during work
+					on projects.</p>
+				<div class="line"></div>
+				<div class="chart">
+					<div class="bars">
+						<div class="bar bar-1" data-bar="1">
+							<span>HTML5</span>
+						</div>
+						<div class="bar bar-2" data-bar="2">
+							<span>CSS3/SCSS</span>
+						</div>
+						<div class="bar bar-3" data-bar="3">
+							<span>RWD/Bootstrap</span>
+						</div>
+						<div class="bar bar-4" data-bar="4">
+							<span>JS ES6</span>
+						</div>
+						<div class="bar bar-5" data-bar="5">
+							<span>NPM/Gulp</span>
+						</div>
+						<div class="bar bar-6" data-bar="6">
+							<span>More...</span>
+						</div>
+					</div>
+					<div class="bar-descriptions">
+						<div class="bar-description bar-description-1 active">
+							I'm familiar with HTML5, I'm currently learning semantics standards and code cleanliness.
+						</div>
+						<div class="bar-description bar-description-2">
+							In projects I use the SASS preprocessor, currently I am learning the BEM methodology to improve the purity of my
+							code.
+						</div>
+						<div class="bar-description bar-description-3">
+							I have experience working with Bootstrap, but Flexbox / Grid also is not a stranger to me.
+						</div>
+						<div class="bar-description bar-description-4">
+							I use the facilities introduced by ES6 / ES7.
+						</div>
+						<div class="bar-description bar-description-5">
+							In my daily work, I use Gulp and the NPM package manager.
+						</div>
+						<div class="bar-description bar-description-6">
+							In addition, when working on projects, I use the GIT version-control system.
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section-projects">
+			<div class="container">
+				<div class="row project">
+					<div class="col-12 col-sm-12 col-lg-6 project-description" data-aos="fade-right">
+						<div class="title">PoGo Website</div>
+						<div class="subtitle">HTML5, CSS3, JS ES6, AOS Library, Bootstrap</div>
+						<div class="description">
+							The general template that I coded to practice my skills.</div>
+						<a href="https://webpage.piech.it/" target="_blank">VISIT SITE</a>
+					</div>
+					<div class="col-12 col-sm-12 col-lg-6 project-mockup" data-aos="fade-left">
+						<img src="./assets/img/mockup_pogo.png" alt="PoGo Website Mockup">
+					</div>
+				</div>
+				<div class="row project">
+					<div class="col-12 col-sm-12 col-lg-6 project-mockup" data-aos="fade-right">
+						<img src="./assets/img/mockup_webcatalog.png" alt="Web Katalog Website Mockup">
+					</div>
+					<div class="col-12 col-sm-12 col-lg-6 project-description" data-aos="fade-left">
+						<div class="title">Web Katalog</div>
+						<div class="subtitle">HTML5, CSS3, JS ES6, RWD</div>
+						<div class="description">A catalog that was created to collect these smaller designs in one place. Additionally
+							at
+							I wanted to develop my animation skills while working on it.</div>
+						<a href="https://webcatalog.piech.it/" target="_blank">VISIT SITE</a>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+		<section class="section-separator">
+			<div class="bg-overlay"></div>
+		</section>
+
+		<section class="section-work">
+			<div class="title" data-aos="zoom-in-up">Want to work together?</div>
+			<div class="description" data-aos="zoom-in-up">
+				I'm currently accepting new projects and would love to hear about yours.
+				Please take a few minutes to tell me about it.</div>
+			<a href="./kontakt">Get started!</a>
+		</section>
+
 	</main>
 
-	<div style="height: 5000px"></div>
+	<footer>
+		<div class="logo">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 189">
+
+				<mask id="mask">
+					<rect width="136" height="189" fill="white" />
+					<path fill="black" d="M 68.00,82.00
+												C 68.00,82.00 61.03,21.54 78.43,21.69
+												100.72,21.20 68.94,81.09 68.00,82.00 Z" />
+					<path fill="black" d="M 88.20,103.68
+												C 89.92,89.86 104.44,84.15 103.86,84.08
+												110.01,80.84 124.76,76.65 123.00,93.00
+												118.29,110.98 100.07,123.51 97.19,125.81
+												94.00,127.26 94.91,127.07 90.64,128.53
+												89.75,126.80 89.78,126.43 89.37,125.16
+												87.86,120.45 86.82,114.68 88.20,103.68 Z" />
+					<path fill="black" d="M 53.00,105.00
+												C 55.87,99.94 58.03,95.70 56.97,87.01
+												54.03,80.57 54.11,80.88 50.90,77.98
+												47.98,75.52 43.95,72.00 39.51,72.50
+												35.08,73.00 29.70,75.77 27.07,78.96
+												24.45,82.14 16.60,94.48 15.75,102.92
+												14.89,111.38 23.82,117.15 32.27,116.09
+												40.15,115.09 50.12,110.06 53.00,105.00 Z" />
+				</mask>
+
+				<path mask="url(#mask)" d="M 60.46,75.11
+												C 60.46,75.11 50.53,66.75 44.69,65.24
+												38.86,63.73 35.21,62.85 28.46,66.68
+												20.36,70.34 8.11,77.11 1.96,98.91
+												-2.93,116.27 8.35,128.75 10.64,128.75
+												18.55,130.47 25.63,133.35 39.44,126.44
+												54.11,117.80 58.45,115.50 58.45,115.50
+												58.35,115.54 67.41,136.95 83.99,135.96
+												94.27,158.70 98.49,165.09 115.43,187.94
+												124.00,189.50 133.32,186.68 126.75,184.68
+												110.32,171.82 103.20,164.99 92.84,134.91
+												109.30,128.07 149.89,98.91 129.87,73.45
+												109.73,47.84 81.00,89.00 81.00,89.00
+												71.97,108.29 75.94,121.76 79.72,128.09
+												75.55,128.10 65.59,118.24 68.00,101.00
+												68.00,101.00 90.11,53.16 98.33,35.43
+												106.56,17.71 89.34,-12.93 69.03,6.92
+												48.72,26.78 59.09,61.79 59.09,61.79
+												59.09,61.79 60.46,75.11 60.46,75.11 Z" />
+			</svg>
+		</div>
+		<div class="handmade">HANDMADE BY ME &copy; 2018</div>
+		<div class="right">ALL RIGHT RESERVED</div>
+	</footer>
+
+	<div class="preloader">
+		<div class="logo">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 189">
+
+				<mask id="mask">
+					<rect width="136" height="189" fill="white" />
+					<path fill="black" d="M 68.00,82.00
+												C 68.00,82.00 61.03,21.54 78.43,21.69
+												100.72,21.20 68.94,81.09 68.00,82.00 Z" />
+					<path fill="black" d="M 88.20,103.68
+												C 89.92,89.86 104.44,84.15 103.86,84.08
+												110.01,80.84 124.76,76.65 123.00,93.00
+												118.29,110.98 100.07,123.51 97.19,125.81
+												94.00,127.26 94.91,127.07 90.64,128.53
+												89.75,126.80 89.78,126.43 89.37,125.16
+												87.86,120.45 86.82,114.68 88.20,103.68 Z" />
+					<path fill="black" d="M 53.00,105.00
+												C 55.87,99.94 58.03,95.70 56.97,87.01
+												54.03,80.57 54.11,80.88 50.90,77.98
+												47.98,75.52 43.95,72.00 39.51,72.50
+												35.08,73.00 29.70,75.77 27.07,78.96
+												24.45,82.14 16.60,94.48 15.75,102.92
+												14.89,111.38 23.82,117.15 32.27,116.09
+												40.15,115.09 50.12,110.06 53.00,105.00 Z" />
+				</mask>
+
+				<path mask="url(#mask)" d="M 60.46,75.11
+												C 60.46,75.11 50.53,66.75 44.69,65.24
+												38.86,63.73 35.21,62.85 28.46,66.68
+												20.36,70.34 8.11,77.11 1.96,98.91
+												-2.93,116.27 8.35,128.75 10.64,128.75
+												18.55,130.47 25.63,133.35 39.44,126.44
+												54.11,117.80 58.45,115.50 58.45,115.50
+												58.35,115.54 67.41,136.95 83.99,135.96
+												94.27,158.70 98.49,165.09 115.43,187.94
+												124.00,189.50 133.32,186.68 126.75,184.68
+												110.32,171.82 103.20,164.99 92.84,134.91
+												109.30,128.07 149.89,98.91 129.87,73.45
+												109.73,47.84 81.00,89.00 81.00,89.00
+												71.97,108.29 75.94,121.76 79.72,128.09
+												75.55,128.10 65.59,118.24 68.00,101.00
+												68.00,101.00 90.11,53.16 98.33,35.43
+												106.56,17.71 89.34,-12.93 69.03,6.92
+												48.72,26.78 59.09,61.79 59.09,61.79
+												59.09,61.79 60.46,75.11 60.46,75.11 Z" />
+			</svg>
+		</div>
+		<div class="loader"></div>
+	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous"></script>
@@ -147,6 +393,7 @@
 	 crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
 	 crossorigin="anonymous"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script type="text/javascript" src="./js/main.min.js"></script>
 </body>

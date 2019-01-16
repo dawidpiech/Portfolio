@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.querySelector(".section-form input[name='telephone']"),
                     document.querySelector(".section-form textarea[name='message']")
                 ]
-                sendMessage(...contact_form)
+                sendMessage(...contact_form, send_contact)
             })
         })()
 
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.querySelector(".menu-form textarea[name='message']")
                 ]
 
-                sendMessage(...menu_form)
+                sendMessage(...menu_form, send_menu)
             })
         }())
 
@@ -110,4 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (document.querySelector(".section-header") != null)
             paralax()
     })
+
+    AOS.init()
 })

@@ -240,7 +240,7 @@ function initMap() {
     map.setMapTypeId('styled_map');
 }
 
-function validate(name, mail, message) {
+function validate(name, mail, phone, message) {
     let controll = true
     if (name.value === "") {
         name.parentElement.style.borderColor = "#F00"
@@ -258,6 +258,16 @@ function validate(name, mail, message) {
     else {
         mail.parentElement.style.removeProperty("border-color")
     }
+
+    if (phone.value !== "")
+        if (validatePhone(phone)) {
+            phone.parentElement.style.borderColor = "#F00"
+            controll = false
+        }
+        else {
+            mail.parentElement.style.removeProperty("border-color")
+        }
+
     if (message.value === "") {
         message.parentElement.style.borderColor = "#F00"
         controll = false
@@ -274,34 +284,62 @@ function validateMail(a) {
     return controll
 }
 
-function sendMessage(name, firm, mail, phone, message) {
-    if (validate(name, mail, message)) {
-        Email.send({
-            Host: "smtp.elasticemail.com",
-            Username: "dawid.piech243@gmail.com",
-            Password: "0a835045-5d7a-418a-8739-11018b7cfee1",
-            To: 'dawid@piech.it',
-            From: "portfolio@piech.it",
-            Subject: `Name: ${name.value}, Firm: ${firm.value}`,
-            Body: `Mail: ${mail.value},
-            Phone: ${phone.value},
+function validatePhone(a) {
+    let controll = (/^[0-9\+]{8,13}$/.test(a.value)) ? false : true
+    return controll
+}
 
-            Message: ${message.value}
+function sendMessage(name, firm, mail, phone, message, button) {
+    if (validate(name, mail, phone, message)) {
+        Email.send({
+            Host : "baguetta.nazwa.pl",
+            Username : "portfolio@piech.it",
+            Password : "Q6xg2gfVU-zYCJnAFk2V-GevDgQeSP-2Af64pgn3b-g7FSZeMsymne",
+            To : 'dawid@piech.it',
+            From : "portfolio@piech.it",
+            Subject: "Wiadomość z portfolio",
+            Body: `<strong>Name:</strong> ${name.value}, <br>
+            <strong>Firm:</strong> ${firm.value}, <br>
+            <strong>Mail:</strong> ${mail.value}, <br>
+            <strong>Phone:</strong> ${phone.value}, <br><br>
+            ${message.value}
             `,
         }).then(
-            message => console.log(message)
+            a => {
+                if (a === "OK") {
+                    button.style.backgroundColor = "green"
+                    button.innerHTML = "Wiadomość została wysłana."
+
+                    setTimeout(() => {
+                        button.style.removeProperty("background-color")
+                        button.innerHTML = "Wyślij"
+                    }, 2000);
+
+                    name.value = ""
+                    firm.value = ""
+                    mail.value = ""
+                    phone.value = ""
+                    message.value = ""
+                }
+                else{
+                    button.style.backgroundColor = "red"
+                    button.innerHTML = "Błąd, spróbuj ponownie lub kliknij w e-mail na dole."
+
+                    setTimeout(() => {
+                        button.style.removeProperty("background-color")
+                        button.innerHTML = "Wyślij"
+                    }, 2000);
+
+                    console.log(a)
+                }
+            }
         )
 
 
         name.parentElement.style.removeProperty("border-color")
         mail.parentElement.style.removeProperty("border-color")
         message.parentElement.style.removeProperty("border-color")
-
-        name.value = ""
-        firm.value = ""
-        mail.value = ""
-        phone.value = ""
-        message.value = ""
+        phone.parentElement.style.removeProperty("border-color")
     }
 }
 
@@ -333,5 +371,5 @@ function allImagesLoaded(preloader) {
 }
 
 function paralax() {
-        document.querySelector(".section-header").style.backgroundPositionY = window.pageYOffset / 4 + "px"
+    document.querySelector(".section-header").style.backgroundPositionY = window.pageYOffset / 4 + "px"
 }
