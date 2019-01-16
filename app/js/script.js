@@ -13,7 +13,7 @@ let hamburger = document.querySelector(".hamburger"),
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    
+
     //hamburger
     hamburger.addEventListener("click", () => {
         document.querySelector("header").classList.toggle("open")
@@ -58,52 +58,56 @@ document.addEventListener("DOMContentLoaded", () => {
         bars[i].addEventListener("click", changeActiveBar)
     }
 
-    try {
-        //Projects carousel
-        arrow_left.addEventListener("click", () => {
-            loop(false)
-        })
-        arrow_right.addEventListener("click", () => {
-            loop(true)
-        })
-    }
-    catch{
+    //Projects carousel
+    if (arrow_left != null & arrow_right != null)
+        (function () {
+            arrow_left.addEventListener("click", () => {
+                loop(false)
+            })
+            arrow_right.addEventListener("click", () => {
+                loop(true)
+            })
+        })()
 
-    }
 
-    try {
+    //Contact form on Contact page
+    if (send_contact != null)
+        (function () {
+            send_contact.addEventListener("click", function () {
+                let contact_form = [
+                    document.querySelector(".section-form input[name='name']"),
+                    document.querySelector(".section-form input[name='company_name']"),
+                    document.querySelector(".section-form input[name='e-mail']"),
+                    document.querySelector(".section-form input[name='telephone']"),
+                    document.querySelector(".section-form textarea[name='message']")
+                ]
+                sendMessage(...contact_form)
+            })
+        })()
 
-        //Contact form
-        send_contact.addEventListener("click", function () {
-            let contact_form = [
-                document.querySelector(".section-form input[name='name']"),
-                document.querySelector(".section-form input[name='company_name']"),
-                document.querySelector(".section-form input[name='e-mail']"),
-                document.querySelector(".section-form input[name='telephone']"),
-                document.querySelector(".section-form textarea[name='message']")
-            ]
-            sendMessage(...contact_form)
-        })
+    //Contact form in menu
+    if (send_menu != null)
+        (function () {
+            send_menu.addEventListener("click", function () {
+                let menu_form = [
+                    document.querySelector(".menu-form input[name='name']"),
+                    document.querySelector(".menu-form input[name='company_name']"),
+                    document.querySelector(".menu-form input[name='e-mail']"),
+                    document.querySelector(".menu-form input[name='telephone']"),
+                    document.querySelector(".menu-form textarea[name='message']")
+                ]
 
-        send_menu.addEventListener("click", function () {
-            let menu_form = [
-                document.querySelector(".menu-form input[name='name']"),
-                document.querySelector(".menu-form input[name='company_name']"),
-                document.querySelector(".menu-form input[name='e-mail']"),
-                document.querySelector(".menu-form input[name='telephone']"),
-                document.querySelector(".menu-form textarea[name='message']")
-            ]
-
-            sendMessage(...menu_form)
-        })
-    }
-    catch{
-
-    }
+                sendMessage(...menu_form)
+            })
+        }())
 
     setTimeout(() => {
         checkImagesLoaded(img, preloader)
     }, 500);
 
-    window.addEventListener("scroll", paralax)
+
+    window.addEventListener("scroll", () => {
+        if (document.querySelector(".section-header") != null)
+            paralax()
+    })
 })

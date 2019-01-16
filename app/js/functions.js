@@ -249,6 +249,8 @@ function validate(name, mail, message) {
     else {
         name.parentElement.style.removeProperty("border-color")
     }
+
+
     if (validateMail(mail)) {
         mail.parentElement.style.borderColor = "#F00"
         controll = false
@@ -275,17 +277,31 @@ function validateMail(a) {
 function sendMessage(name, firm, mail, phone, message) {
     if (validate(name, mail, message)) {
         Email.send({
-            SecureToken: "d79c6744-5db7-487e-ba33-0ae13c93cd26",
+            Host: "smtp.elasticemail.com",
+            Username: "dawid.piech243@gmail.com",
+            Password: "0a835045-5d7a-418a-8739-11018b7cfee1",
             To: 'dawid@piech.it',
             From: "portfolio@piech.it",
-            Subject: `Name: ${name}, Firm: ${firm}, Phone: ${phone}, Message: ${message}`,
-            Body: message
+            Subject: `Name: ${name.value}, Firm: ${firm.value}`,
+            Body: `Mail: ${mail.value},
+            Phone: ${phone.value},
+
+            Message: ${message.value}
+            `,
         }).then(
-            message => alert(message)
+            message => console.log(message)
         )
+
+
         name.parentElement.style.removeProperty("border-color")
         mail.parentElement.style.removeProperty("border-color")
         message.parentElement.style.removeProperty("border-color")
+
+        name.value = ""
+        firm.value = ""
+        mail.value = ""
+        phone.value = ""
+        message.value = ""
     }
 }
 
@@ -306,16 +322,16 @@ function checkImagesLoaded(imagesArray, preloaderHandle) {
         }
     }
 
-    if (loaded === 0){
+    if (loaded === 0) {
         allImagesLoaded(preloaderHandle)
     }
 }
 
-function allImagesLoaded(preloader){
+function allImagesLoaded(preloader) {
     document.querySelector("body").classList.remove("load")
     preloader.classList.add("isLoaded")
 }
 
-function paralax(){
-    document.querySelector(".section-header").style.backgroundPositionY = window.pageYOffset/4 + "px"
+function paralax() {
+        document.querySelector(".section-header").style.backgroundPositionY = window.pageYOffset / 4 + "px"
 }
